@@ -1,4 +1,4 @@
-/* node for linked list:
+ node for linked list:
 
 struct Node {
     int data;
@@ -8,8 +8,6 @@ struct Node {
         next = NULL;
     }
 };
-
-*/
 
 class Solution
 {
@@ -30,7 +28,7 @@ class Solution
     }
      void insertAtTail(struct Node* &head,struct Node* &tail,int val){
         Node*temp=new Node(val);
-        if(head==NULL) //when list is empty
+        if(head==NULL)                                                //when list is empty
         {
             head=temp;
             tail=temp;
@@ -50,14 +48,14 @@ class Solution
         while(frist!=NULL && second!=NULL){
             int sum=carry+frist->data + second->data;
             int digit=sum%10;
-            // Node* temp=new Node(digit);
+                                                                         // Node* temp=new Node(digit);
             insertAtTail(ansHead,ansTail,digit);
             carry=sum/10;
             frist=frist->next;
             second=second->next;
             
         }
-        while(frist!=NULL){ //when second list is sort
+        while(frist!=NULL){                                            //when second list is sort
             int sum=carry+frist->data;
             int digit=sum%10;
             // Node* temp=new Node(digit);
@@ -65,10 +63,10 @@ class Solution
             carry=sum/10;
             frist=frist->next;
         }
-        while(second!=NULL){  //when frist is sort
+        while(second!=NULL){                         //when frist is sort
             int sum=carry+second->data;
             int digit=sum%10;
-            // Node* temp=new Node(digit);
+                                                  // Node* temp=new Node(digit);
             insertAtTail(ansHead,ansTail,digit);
             carry=sum/10;
             second=second->next;
@@ -76,7 +74,7 @@ class Solution
         while(carry!=0){
             int sum=carry;
              int digit=sum%10;
-            // Node* temp=new Node(digit);
+                                                // Node* temp=new Node(digit);
             insertAtTail(ansHead,ansTail,digit);
             carry=sum/10;
             
@@ -85,10 +83,10 @@ class Solution
         return ansHead;
     }
     public:
-    //Function to add two numbers represented by linked list.
+                                            //Function to add two numbers represented by linked list.
     struct Node* addTwoLists(struct Node* first, struct Node*second)
     {
-        // code here
+          
         //step-1 reverse the both linked list 
         first = reverse(first);
         second = reverse(second);
